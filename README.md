@@ -3,9 +3,19 @@
 本项目是基于karabiner实现替代[capslox软件](https://capslox.com)
 部分功能的配置，由于在内测阶段一直使用capslox，且仅使用了基础热键，故没有参与付费购买，当然capslox不得不说是一款在Mac上非常好用的软件。
 
+## 安装
+
+1. 下载 [Karabiner-Elements](https://karabiner-elements.pqrs.org/) 并安装好
+2. 在默认浏览中输入下面网址，并回车
+    ```shell
+    karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/yqchilde/capslox-karabiner/main/capslox-karabiner.json
+    ```
+3. 跳转至Karabiner-Elements并导入
+4. 在软件菜单项 `Complex modifications` 中点击左下角 `Add rule` 启用该项目全部功能
+
 ## 认识键盘符号
 
-以下符号代表释义如下：
+README下文将用以下符号来表示按键位及映射键位，其代表释义如下：
 
 | 符号 | Name     |
 | ---- | -------- |
@@ -16,7 +26,7 @@
 | `⌃`  | Control  |
 | `⇧`  | Shift    |
 
-## 功能
+## 用法
 
 ### Capslock赋能
 
@@ -41,8 +51,6 @@
 | `⇪` `F`     | `→` | 向右移动         |
 | `⇪` `A`     | `⌘` `←` | 向左移动一个单词 |
 | `⇪` `G`     | `⌘` `→` | 向右移动一个单词 |
-| `⇪` `Y`     | `⌘` `↑` | 向外括选区域 |
-| `⇪` `B`     | `⌘` `下` | 向内缩减区域 |
 | `⇪` `P`     | `⌥` `←` | 移动至行首       |
 | `⇪` `;`     | `⌥` `→` | 移动至行位       |
 
@@ -56,6 +64,8 @@
 | `⇪` `L`  | `⇧` `→` | 向右选中         |
 | `⇪` `H`  | `⇧` `⌘` `←` | 向左选中一个单词 |
 | `⇪` `N`  | `⇧` `⌘` `→` | 向右选中一个单词 |
+| `⇪` `Y`     | `⌘` `↑` | 向外括选区域 |
+| `⇪` `B`     | `⌘` `下` | 向内缩减区域 |
 | `⇪` `U`  | `⇧` `⌥` `←` | 选中至行首       |
 | `⇪` `O`  | `⇧` `⌥` `→` | 选中至行尾       |
 | `⇪` `,` | `⌘` `←`  +  `⇧` `⌘` `→` | 选中当前单词 |

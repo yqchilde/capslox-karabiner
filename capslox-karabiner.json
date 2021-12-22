@@ -219,52 +219,6 @@
         },
         {
           "from": {
-            "description": "向外括选区域",
-            "key_code": "y",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "up_arrow",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "description": "向内缩减区域",
-            "key_code": "b",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "down_arrow",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
             "description": "移动到行首",
             "key_code": "p",
             "modifiers": {
@@ -449,6 +403,52 @@
               "modifiers": [
                 "left_command",
                 "left_shift"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "description": "向外括选区域",
+            "key_code": "y",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "description": "向内缩减区域",
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "left_command"
               ]
             }
           ],
