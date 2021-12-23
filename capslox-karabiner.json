@@ -837,6 +837,51 @@
           "type": "basic"
         }
       ]
+    },
+    {
+      "description": "鼠标操作",
+      "manipulators": [
+        {
+          "description": "鼠标前进",
+          "from": {
+            "pointing_button": "button1",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button5"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "description": "鼠标后退",
+          "from": {
+            "pointing_button": "button2",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button4"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
     }
   ]
 }
