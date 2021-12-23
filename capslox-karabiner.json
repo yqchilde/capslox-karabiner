@@ -89,35 +89,6 @@
       ]
     },
     {
-      "description": "Command与Option键位互换",
-      "manipulators": [
-        {
-          "description": "Option键位换成Command",
-          "type": "basic",
-          "from": {
-            "key_code": "left_option"
-          },
-          "to": [
-            {
-              "key_code": "left_command"
-            }
-          ]
-        },
-        {
-          "description": "Command键位换成Option",
-          "type": "basic",
-          "from": {
-            "key_code": "left_command"
-          },
-          "to": [
-            {
-              "key_code": "left_option"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "光标移动",
       "manipulators": [
         {
@@ -328,7 +299,6 @@
           ],
           "type": "basic"
         }
-
       ]
     },
     {
