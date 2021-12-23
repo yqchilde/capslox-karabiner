@@ -265,6 +265,54 @@
         },
         {
           "from": {
+            "description": "Capslock + Option + P = 移动至行首加强",
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "a",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "description": "Capslock + Option + ; = 移动至行尾加强",
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
             "description": "移动至页首",
             "key_code": "p",
             "modifiers": {
