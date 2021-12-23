@@ -643,6 +643,33 @@
             }
           ],
           "type": "basic"
+        },
+        {
+          "from": {
+            "description": "选中当前行",
+            "key_code": "comma",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "home"
+            },
+            {
+              "key_code": "end",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ],
+          "type": "basic"
         }
       ]
     },
