@@ -248,7 +248,7 @@
         },
         {
           "from": {
-            "description": "移动到行首",
+            "description": "移动至行首",
             "key_code": "p",
             "modifiers": {
               "mandatory": [
@@ -261,17 +261,14 @@
           },
           "to": [
             {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "left_command"
-              ]
+              "key_code": "home"
             }
           ],
           "type": "basic"
         },
         {
           "from": {
-            "description": "移动到行尾",
+            "description": "移动至行尾",
             "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
@@ -284,14 +281,54 @@
           },
           "to": [
             {
-              "key_code": "right_arrow",
-              "modifiers": [
-                "left_command"
+              "key_code": "end"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "description": "移动至页首",
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
               ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_up"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "description": "移动至页尾",
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_down"
             }
           ],
           "type": "basic"
         }
+
       ]
     },
     {
@@ -498,9 +535,8 @@
           },
           "to": [
             {
-              "key_code": "left_arrow",
+              "key_code": "home",
               "modifiers": [
-                "left_command",
                 "left_shift"
               ]
             }
@@ -522,9 +558,8 @@
           },
           "to": [
             {
-              "key_code": "right_arrow",
+              "key_code": "end",
               "modifiers": [
-                "left_command",
                 "left_shift"
               ]
             }
@@ -669,10 +704,9 @@
           },
           "to": [
             {
-              "key_code": "left_arrow",
+              "key_code": "home",
               "modifiers": [
-                "left_shift",
-                "left_command"
+                "left_shift"
               ]
             },
             {
@@ -696,10 +730,9 @@
           },
           "to": [
             {
-              "key_code": "right_arrow",
+              "key_code": "end",
               "modifiers": [
-                "left_shift",
-                "left_command"
+                "left_shift"
               ]
             },
             {
