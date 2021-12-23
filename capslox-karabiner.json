@@ -38,7 +38,7 @@
           ]
         },
         {
-          "description": "Capslock+Esc=切换大小写",
+          "description": "Capslock + Esc = 切换大小写",
           "type": "basic",
           "from": {
             "key_code": "escape",
@@ -64,7 +64,7 @@
           ]
         },
         {
-          "description": "Capslock+SpaceBar=切换输入法",
+          "description": "Capslock + SpaceBar = 切换输入法",
           "type": "basic",
           "from": {
             "key_code": "spacebar",
@@ -93,7 +93,7 @@
       "manipulators": [
         {
           "from": {
-            "description": "向上移动",
+            "description": "Capslock + E = 向上移动",
             "key_code": "e",
             "modifiers": {
               "mandatory": [
@@ -113,7 +113,7 @@
         },
         {
           "from": {
-            "description": "向下移动",
+            "description": "Capslock + D = 向下移动",
             "key_code": "d",
             "modifiers": {
               "mandatory": [
@@ -133,7 +133,7 @@
         },
         {
           "from": {
-            "description": "向左移动",
+            "description": "Capslock + S = 向左移动",
             "key_code": "s",
             "modifiers": {
               "mandatory": [
@@ -153,7 +153,7 @@
         },
         {
           "from": {
-            "description": "向右移动",
+            "description": "Capslock + F = 向右移动",
             "key_code": "f",
             "modifiers": {
               "mandatory": [
@@ -173,7 +173,7 @@
         },
         {
           "from": {
-            "description": "向左移动一个单词",
+            "description": "Capslock + A = 向左移动一个单词",
             "key_code": "a",
             "modifiers": {
               "mandatory": [
@@ -196,7 +196,7 @@
         },
         {
           "from": {
-            "description": "向右移动一个单词",
+            "description": "Capslock + G = 向右移动一个单词",
             "key_code": "g",
             "modifiers": {
               "mandatory": [
@@ -219,7 +219,7 @@
         },
         {
           "from": {
-            "description": "移动至行首",
+            "description": "Capslock + P = 移动至行首",
             "key_code": "p",
             "modifiers": {
               "mandatory": [
@@ -242,7 +242,7 @@
         },
         {
           "from": {
-            "description": "移动至行尾",
+            "description": "Capslock + ; = 移动至行尾",
             "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
@@ -313,7 +313,7 @@
         },
         {
           "from": {
-            "description": "移动至页首",
+            "description": "Capslock + Command + P = 移动至页首",
             "key_code": "p",
             "modifiers": {
               "mandatory": [
@@ -334,7 +334,7 @@
         },
         {
           "from": {
-            "description": "移动至页尾",
+            "description": "Capslock + Command + ; = 移动至页尾",
             "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
@@ -360,7 +360,7 @@
       "manipulators": [
         {
           "from": {
-            "description": "向上选中",
+            "description": "Capslock + I = 向上选中",
             "key_code": "i",
             "modifiers": {
               "mandatory": [
@@ -383,7 +383,7 @@
         },
         {
           "from": {
-            "description": "向下选中",
+            "description": "Capslock + K = 向下选中",
             "key_code": "k",
             "modifiers": {
               "mandatory": [
@@ -406,7 +406,7 @@
         },
         {
           "from": {
-            "description": "向左选中",
+            "description": "Capslock + J = 向左选中",
             "key_code": "j",
             "modifiers": {
               "mandatory": [
@@ -429,7 +429,7 @@
         },
         {
           "from": {
-            "description": "向右选中",
+            "description": "Capslock + L = 向右选中",
             "key_code": "l",
             "modifiers": {
               "mandatory": [
@@ -452,7 +452,7 @@
         },
         {
           "from": {
-            "description": "向左选中一个单词",
+            "description": "Capslock + H = 向左选中一个单词",
             "key_code": "h",
             "modifiers": {
               "mandatory": [
@@ -476,7 +476,7 @@
         },
         {
           "from": {
-            "description": "向右选中一个单词",
+            "description": "Capslock + N = 向右选中一个单词",
             "key_code": "n",
             "modifiers": {
               "mandatory": [
@@ -500,7 +500,7 @@
         },
         {
           "from": {
-            "description": "向外括选区域",
+            "description": "Capslock + Y = 向外括选区域",
             "key_code": "y",
             "modifiers": {
               "mandatory": [
@@ -523,7 +523,7 @@
         },
         {
           "from": {
-            "description": "向内缩减区域",
+            "description": "Capslock + B = 向内缩减区域",
             "key_code": "b",
             "modifiers": {
               "mandatory": [
@@ -546,7 +546,7 @@
         },
         {
           "from": {
-            "description": "选中至行首",
+            "description": "Capslock + U = 选中至行首",
             "key_code": "u",
             "modifiers": {
               "mandatory": [
@@ -569,7 +569,7 @@
         },
         {
           "from": {
-            "description": "选中至行尾",
+            "description": "Capslock + O = 选中至行尾",
             "key_code": "o",
             "modifiers": {
               "mandatory": [
@@ -592,7 +592,7 @@
         },
         {
           "from": {
-            "description": "选中至页首",
+            "description": "Capslock + Command + U = 选中至页首",
             "key_code": "u",
             "modifiers": {
               "mandatory": [
@@ -616,7 +616,7 @@
         },
         {
           "from": {
-            "description": "选中至页尾",
+            "description": "Capslock + Command + O = 选中至页尾",
             "key_code": "o",
             "modifiers": {
               "mandatory": [
@@ -640,7 +640,7 @@
         },
         {
           "from": {
-            "description": "选中当前单词",
+            "description": "Capslock + , = 选中当前单词",
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
@@ -670,7 +670,7 @@
         },
         {
           "from": {
-            "description": "选中当前行",
+            "description": "Capslock + Command + ,选中当前行",
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
@@ -702,7 +702,7 @@
       "manipulators": [
         {
           "from": {
-            "description": "向左删除",
+            "description": "Capslock + W = 向左删除",
             "key_code": "w",
             "modifiers": {
               "mandatory": [
@@ -722,7 +722,7 @@
         },
         {
           "from": {
-            "description": "向右删除",
+            "description": "Capslock + R = 向右删除",
             "key_code": "r",
             "modifiers": {
               "mandatory": [
@@ -741,7 +741,7 @@
           "type": "basic"
         },
         {
-          "description": "向左删除一个单词",
+          "description": "Capslock + Command + W = 向左删除一个单词",
           "from": {
             "key_code": "w",
             "modifiers": {
@@ -766,7 +766,7 @@
         },
         {
           "from": {
-            "description": "向右删除一个单词",
+            "description": "Capslock + Command + R = 向右删除一个单词",
             "key_code": "r",
             "modifiers": {
               "mandatory": [
@@ -790,7 +790,7 @@
         },
         {
           "from": {
-            "description": "删除至行首",
+            "description": "Capslock + [ = 删除至行首",
             "key_code": "open_bracket",
             "modifiers": {
               "mandatory": [
@@ -816,7 +816,7 @@
         },
         {
           "from": {
-            "description": "删除至行尾",
+            "description": "Capslock + / = 删除至行尾",
             "key_code": "slash",
             "modifiers": {
               "mandatory": [
@@ -842,7 +842,7 @@
         },
         {
           "from": {
-            "description": "删除当前行",
+            "description": "Capslock + Delete = 删除当前行",
             "key_code": "delete_or_backspace",
             "modifiers": {
               "mandatory": [
@@ -865,7 +865,7 @@
         },
         {
           "from": {
-            "description": "删除全部内容",
+            "description": "Capslock + Command + Delete = 删除全部内容",
             "key_code": "delete_or_backspace",
             "modifiers": {
               "mandatory": [
@@ -896,7 +896,7 @@
       "description": "鼠标操作",
       "manipulators": [
         {
-          "description": "鼠标前进",
+          "description": "Capslock + 鼠标左击 = 鼠标前进",
           "from": {
             "pointing_button": "button1",
             "modifiers": {
@@ -916,7 +916,7 @@
           "type": "basic"
         },
         {
-          "description": "鼠标后退",
+          "description": "Capslock + 鼠标右击 = 鼠标后退",
           "from": {
             "pointing_button": "button2",
             "modifiers": {
