@@ -670,7 +670,7 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + ,选中当前行",
+            "description": "Capslock + Command + , = 选中当前行",
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
@@ -690,6 +690,56 @@
               "key_code": "end",
               "modifiers": [
                 "left_shift"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "description": "Capslock + Command + I = 选中的行向上移动",
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "description": "Capslock + Command + K = 选中的行向下移动",
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "left_shift",
+                "left_option"
               ]
             }
           ],
