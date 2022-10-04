@@ -13,13 +13,14 @@
 3. 跳转至Karabiner-Elements并导入
 4. 在软件菜单项 `Complex modifications` 中点击左下角 `Add rule` 启用该项目全部功能
 
-![img](https://pic.yqqy.top/blog/202112231454280.jpg?imageMogr2 "效果图1")
+![img](https://github.com/yqchilde/capslox-karabiner/blob/main/screenshots/img1.jpeg "效果图1")
+
 
 **注意：**
 
 如果要外接键盘，需要将command键位与option键位互换，如下：
 
-![img](https://pic.yqqy.top/blog/202112231505410.jpg "效果图2")
+![img](https://github.com/yqchilde/capslox-karabiner/blob/main/screenshots/img2.jpeg "效果图2")
 
 ## 认识键盘符号
 
