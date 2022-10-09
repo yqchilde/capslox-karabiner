@@ -1,6 +1,6 @@
 {
   "title": "capslox-karabiner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "maintainers": [
     "yqchilde"
   ],
@@ -11,15 +11,13 @@
       "description": "Capslock赋能",
       "manipulators": [
         {
-          "description": "Capslock键设置为Hyper键",
-          "type": "basic",
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
+          "to_if_alone": [
+            {
+              "key_code": "escape"
             }
+          ],
+          "from": {
+            "key_code": "caps_lock"
           },
           "to": [
             {
@@ -31,26 +29,17 @@
               ]
             }
           ],
-          "to_if_alone": [
-            {
-              "key_code": "escape"
-            }
-          ]
+          "type": "basic"
         },
         {
-          "description": "Capslock + Esc = 切换大小写",
-          "type": "basic",
           "from": {
             "key_code": "escape",
             "modifiers": {
-              "optional": [
-                "caps_lock"
-              ],
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -61,19 +50,18 @@
                 "left_control"
               ]
             }
-          ]
+          ],
+          "type": "basic"
         },
         {
-          "description": "Capslock + SpaceBar = 切换输入法",
-          "type": "basic",
           "from": {
             "key_code": "spacebar",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -84,7 +72,8 @@
                 "left_control"
               ]
             }
-          ]
+          ],
+          "type": "basic"
         }
       ]
     },
@@ -93,14 +82,13 @@
       "manipulators": [
         {
           "from": {
-            "description": "Capslock + E = 向上移动",
             "key_code": "e",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -113,14 +101,13 @@
         },
         {
           "from": {
-            "description": "Capslock + D = 向下移动",
             "key_code": "d",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -133,14 +120,13 @@
         },
         {
           "from": {
-            "description": "Capslock + S = 向左移动",
             "key_code": "s",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -153,14 +139,13 @@
         },
         {
           "from": {
-            "description": "Capslock + F = 向右移动",
             "key_code": "f",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -173,14 +158,13 @@
         },
         {
           "from": {
-            "description": "Capslock + A = 向左移动一个单词",
             "key_code": "a",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -196,14 +180,13 @@
         },
         {
           "from": {
-            "description": "Capslock + G = 向右移动一个单词",
             "key_code": "g",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -219,14 +202,13 @@
         },
         {
           "from": {
-            "description": "Capslock + P = 移动至行首",
             "key_code": "p",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -238,18 +220,26 @@
               ]
             }
           ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "description": "Capslock + ; = 移动至行尾",
             "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -261,19 +251,26 @@
               ]
             }
           ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "description": "Capslock + Option + P = 移动至行首加强",
             "key_code": "p",
             "modifiers": {
               "mandatory": [
-                "left_option",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -285,19 +282,26 @@
               ]
             }
           ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "description": "Capslock + Option + ; = 移动至行尾加强",
             "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
-                "left_option",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -309,19 +313,27 @@
               ]
             }
           ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "description": "Capslock + Command + P = 移动至页首",
             "key_code": "p",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -334,15 +346,14 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + ; = 移动至页尾",
             "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -360,14 +371,13 @@
       "manipulators": [
         {
           "from": {
-            "description": "Capslock + I = 向上选中",
             "key_code": "i",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -383,14 +393,13 @@
         },
         {
           "from": {
-            "description": "Capslock + K = 向下选中",
             "key_code": "k",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -406,14 +415,13 @@
         },
         {
           "from": {
-            "description": "Capslock + J = 向左选中",
             "key_code": "j",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -429,14 +437,13 @@
         },
         {
           "from": {
-            "description": "Capslock + L = 向右选中",
             "key_code": "l",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -452,14 +459,13 @@
         },
         {
           "from": {
-            "description": "Capslock + H = 向左选中一个单词",
             "key_code": "h",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -476,14 +482,13 @@
         },
         {
           "from": {
-            "description": "Capslock + N = 向右选中一个单词",
             "key_code": "n",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -500,14 +505,13 @@
         },
         {
           "from": {
-            "description": "Capslock + Y = 向外括选区域",
             "key_code": "y",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -523,14 +527,13 @@
         },
         {
           "from": {
-            "description": "Capslock + B = 向内缩减区域",
             "key_code": "b",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -546,14 +549,13 @@
         },
         {
           "from": {
-            "description": "Capslock + U = 选中至行首",
             "key_code": "u",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -569,14 +571,13 @@
         },
         {
           "from": {
-            "description": "Capslock + O = 选中至行尾",
             "key_code": "o",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -592,15 +593,14 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + U = 选中至页首",
             "key_code": "u",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -616,15 +616,14 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + O = 选中至页尾",
             "key_code": "o",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -640,14 +639,13 @@
         },
         {
           "from": {
-            "description": "Capslock + , = 选中当前单词",
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -670,15 +668,14 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + , = 选中当前行",
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -697,15 +694,14 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + I = 选中的行向上移动",
             "key_code": "i",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -713,8 +709,8 @@
             {
               "key_code": "up_arrow",
               "modifiers": [
-                "left_shift",
-                "left_option"
+                "left_option",
+                "left_shift"
               ]
             }
           ],
@@ -722,15 +718,14 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + K = 选中的行向下移动",
             "key_code": "k",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -738,8 +733,8 @@
             {
               "key_code": "down_arrow",
               "modifiers": [
-                "left_shift",
-                "left_option"
+                "left_option",
+                "left_shift"
               ]
             }
           ],
@@ -752,14 +747,13 @@
       "manipulators": [
         {
           "from": {
-            "description": "Capslock + W = 向左删除",
             "key_code": "w",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -772,14 +766,13 @@
         },
         {
           "from": {
-            "description": "Capslock + R = 向右删除",
             "key_code": "r",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -791,7 +784,6 @@
           "type": "basic"
         },
         {
-          "description": "Capslock + Command + W = 向左删除一个单词",
           "from": {
             "key_code": "w",
             "modifiers": {
@@ -799,8 +791,8 @@
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -816,15 +808,14 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + R = 向右删除一个单词",
             "key_code": "r",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -840,14 +831,13 @@
         },
         {
           "from": {
-            "description": "Capslock + [ = 删除至行首",
             "key_code": "open_bracket",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -866,14 +856,13 @@
         },
         {
           "from": {
-            "description": "Capslock + / = 删除至行尾",
             "key_code": "slash",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -892,14 +881,13 @@
         },
         {
           "from": {
-            "description": "Capslock + Delete = 删除当前行",
             "key_code": "delete_or_backspace",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -915,15 +903,14 @@
         },
         {
           "from": {
-            "description": "Capslock + Command + Delete = 删除全部内容",
             "key_code": "delete_or_backspace",
             "modifiers": {
               "mandatory": [
                 "left_command",
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -946,17 +933,16 @@
       "description": "鼠标操作",
       "manipulators": [
         {
-          "description": "Capslock + 鼠标左击 = 鼠标前进",
           "from": {
-            "pointing_button": "button1",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
-            }
+            },
+            "pointing_button": "button1"
           },
           "to": [
             {
@@ -966,17 +952,16 @@
           "type": "basic"
         },
         {
-          "description": "Capslock + 鼠标右击 = 鼠标后退",
           "from": {
-            "pointing_button": "button2",
             "modifiers": {
               "mandatory": [
                 "right_command",
                 "right_control",
-                "right_shift",
-                "right_option"
+                "right_option",
+                "right_shift"
               ]
-            }
+            },
+            "pointing_button": "button2"
           },
           "to": [
             {
