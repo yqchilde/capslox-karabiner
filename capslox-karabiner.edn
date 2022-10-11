@@ -31,6 +31,8 @@
 
  :applications {:terminals ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$"]
                 :textEditors ["^app\\.cyan\\.taio$", "^com\\.agiletortoise\\.Drafts-OSX$"]
+                :taio ["^app\\.cyan\\.taio$"]
+                :drafts ["^com\\.agiletortoise\\.Drafts-OSX$"]
                 :jetbrains ["^com\\.jetbrains\\.goland$"]
                 :vscode ["^com\\.microsoft\\.VSCode$"]}
 
@@ -75,7 +77,6 @@
                  [:!QWERCsemicolon :!Cdown_arrow [:textEditors]]]}
 
 
-
         {:des   "光标选中"
          :rules [;; Capslock + I = 向上选中
                  [:!QWERi :!Sup_arrow]
@@ -110,10 +111,19 @@
                  ;; Capslock + Command + , = 选中当前行
                  [:!QWERCcomma [:!Cleft_arrow :!SCright_arrow]]
                  ;; Capslock + Command + I = 选中的行向上移动
-                 [:!QWERCi :!SOup_arrow]
+                 [:!QWERCi :!SOup_arrow [:!textEditors]]
                  ;; Capslock + Command + K = 选中的行向下移动
-                 [:!QWERCk :!SOdown_arrow]]}
-
+                 [:!QWERCk :!SOdown_arrow [:!textEditors]]
+                 [:!QWERCcomma [:!Cleft_arrow :!SCright_arrow]]
+                 ;; Capslock + Command + I = 选中的行向上移动(taio中)
+                 [:!QWERCi :!COup_arrow [:taio]]
+                 ;; Capslock + Command + K = 选中的行向下移动(taio中)
+                 [:!QWERCk :!COdown_arrow [:taio]]
+                 [:!QWERCcomma [:!Cleft_arrow :!SCright_arrow]]
+                 ;; Capslock + Command + I = 选中的行向上移动(drafts中)
+                 [:!QWERCi :!Oup_arrow [:drafts]]
+                 ;; Capslock + Command + K = 选中的行向下移动(drafts中)
+                 [:!QWERCk :!Odown_arrow [:drafts]]]}
 
 
         {:des   "文本删除"
@@ -135,7 +145,6 @@
                  [:!QWERdelete_or_backspace [:!Cright_arrow :!SCleft_arrow :delete_or_backspace] [:textEditors]]
                  ;; Capslock + Command + Delete = 删除全部内容
                  [:!QWERCdelete_or_backspace [:!Ca :delete_or_backspace]]]}
-
 
 
         {:des   "鼠标操作"
