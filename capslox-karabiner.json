@@ -1,6 +1,6 @@
 {
   "title": "capslox-karabiner",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "maintainers": [
     "yqchilde"
   ],
@@ -561,8 +561,9 @@
           },
           "to": [
             {
-              "key_code": "home",
+              "key_code": "left_arrow",
               "modifiers": [
+                "left_command",
                 "left_shift"
               ]
             }
@@ -583,8 +584,9 @@
           },
           "to": [
             {
-              "key_code": "end",
+              "key_code": "right_arrow",
               "modifiers": [
+                "left_command",
                 "left_shift"
               ]
             }
@@ -681,11 +683,15 @@
           },
           "to": [
             {
-              "key_code": "home"
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_command"
+              ]
             },
             {
-              "key_code": "end",
+              "key_code": "right_arrow",
               "modifiers": [
+                "left_command",
                 "left_shift"
               ]
             }
@@ -843,8 +849,9 @@
           },
           "to": [
             {
-              "key_code": "home",
+              "key_code": "left_arrow",
               "modifiers": [
+                "left_command",
                 "left_shift"
               ]
             },
@@ -868,8 +875,9 @@
           },
           "to": [
             {
-              "key_code": "end",
+              "key_code": "right_arrow",
               "modifiers": [
+                "left_command",
                 "left_shift"
               ]
             },

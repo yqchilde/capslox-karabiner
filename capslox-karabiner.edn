@@ -1,87 +1,88 @@
 {;; here's the definition
 
-;; !  | means mandatory
-;; #  | means optional
-;; C  | left_command
-;; T  | left_control
-;; O  | left_option
-;; S  | left_shift
-;; F  | fn
-;; Q  | right_command
-;; W  | right_control
-;; E  | right_option
-;; R  | right_shift
-;; P  | caps_lock
-;; !! | mandatory command + control + optional + shift (hyper)
-;; ## | optional any
+    ;; !  | means mandatory
+    ;; #  | means optional
+    ;; C  | left_command
+    ;; T  | left_control
+    ;; O  | left_option
+    ;; S  | left_shift
+    ;; F  | fn
+    ;; Q  | right_command
+    ;; W  | right_control
+    ;; E  | right_option
+    ;; R  | right_shift
+    ;; P  | caps_lock
+    ;; !! | mandatory command + control + optional + shift (hyper)
+    ;; ## | optional any
 
-  :profiles {:Default {:default true
-                       :sim     50     ;; simultaneous_threshold_milliseconds (def: 50)
-                       ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
-                       :delay   50    ;; to_delayed_action_delay_milliseconds (def: 500)
-                       ;; after :delay ms, the key press is considered to be delayed (used for double-press macros)
-                       :alone   50    ;; to_if_alone_timeout_milliseconds (def: 1000)
-                       ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
-                       :held    50}}    ;; to_if_held_down_threshold_milliseconds (def: 500)
-  ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
-
-
-  ;the default value is 250
-  :simlayer-threshold 500
-
-  :applications {:terminals ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$"]}
-
-  :main [{:des "Capslock赋能"
-          :rules [[:caps_lock :!QWEright_shift nil {:alone :escape}] ;; Capslock键设置为Hyper键
-                  [:!QWERescape :!Tcaps_lock]                        ;; Capslock + Esc = 切换大小写
-                  [:!QWERspacebar :!Tspacebar]]}                     ;; Capslock + SpaceBar = 切换输入法
+ :profiles {:Default {:default true
+                      :sim     50     ;; simultaneous_threshold_milliseconds (def: 50)
+                        ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
+                      :delay   50    ;; to_delayed_action_delay_milliseconds (def: 500)
+                        ;; after :delay ms, the key press is considered to be delayed (used for double-press macros)
+                      :alone   50    ;; to_if_alone_timeout_milliseconds (def: 1000)
+                        ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
+                      :held    50}}    ;; to_if_held_down_threshold_milliseconds (def: 500)
+                        ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
 
 
-         {:des "光标移动"
-          :rules [[:!QWERe :up_arrow]                            ;; Capslock + E = 向上移动
-                  [:!QWERd :down_arrow]                          ;; Capslock + D = 向下移动
-                  [:!QWERs :left_arrow]                          ;; Capslock + S = 向左移动
-                  [:!QWERf :right_arrow]                         ;; Capslock + F = 向右移动
-                  [:!QWERa :!Oleft_arrow]                        ;; Capslock + A = 向左移动一个单词
-                  [:!QWERg :!Oright_arrow]                       ;; Capslock + G = 向右移动一个单词
-                  [:!QWERp :!Cleft_arrow [:!terminals]]          ;; Capslock + P = 移动至行首
-                  [:!QWERsemicolon :!Cright_arrow [:!terminals]] ;; Capslock + ; = 移动至行尾
-                  [:!QWERp :!Ta [:terminals]]                    ;; Capslock + P = 移动至行首(terminal中)
-                  [:!QWERsemicolon :!Te [:terminals]]            ;; Capslock + ; = 移动至行尾(terminal中)
-                  [:!QWERCp :page_up]                            ;; Capslock + Command + P = 移动至页首
-                  [:!QWERCsemicolon :page_down]]}                ;; Capslock + Command + ; = 移动至页尾
+ ;the default value is 250
+ :simlayer-threshold 500
+
+ :applications {:terminals ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$"]}
 
 
-         {:des "光标选中"
-          :rules [[:!QWERi :!Sup_arrow]                         ;; Capslock + I = 向上选中
-                  [:!QWERk :!Sdown_arrow]                       ;; Capslock + K = 向下选中
-                  [:!QWERj :!Sleft_arrow]                       ;; Capslock + J = 向左选中
-                  [:!QWERl :!Sright_arrow]                      ;; Capslock + L = 向右选中
-                  [:!QWERh :!OSleft_arrow]                      ;; Capslock + H = 向左选中一个单词
-                  [:!QWERn :!OSright_arrow]                     ;; Capslock + N = 向右选中一个单词
-                  [:!QWERy :!Oup_arrow]                         ;; Capslock + Y = 向外括选区域
-                  [:!QWERb :!Odown_arrow]                       ;; Capslock + B = 向内缩减区域
-                  [:!QWERu :!Shome]                             ;; Capslock + U = 选中至行首
-                  [:!QWERo :!Send]                              ;; Capslock + O = 选中至行尾
-                  [:!QWERCu :!Spage_up]                         ;; Capslock + Command + U = 选中至页首
-                  [:!QWERCo :!Spage_down]                       ;; Capslock + Command + U = 选中至页首
-                  [:!QWERcomma [:!Oleft_arrow :!OSright_arrow]] ;; Capslock + , = 选中当前单词
-                  [:!QWERCcomma [:home :!Send]]                 ;; Capslock + Command + , = 选中当前行
-                  [:!QWERCi :!SOup_arrow]                       ;; Capslock + Command + I = 选中的行向上移动
-                  [:!QWERCk :!SOdown_arrow]]}                   ;; Capslock + Command + K = 选中的行向下移动
+ :main [{:des "Capslock赋能"
+         :rules [[:caps_lock :!QWEright_shift nil {:alone :escape}] ;; Capslock键设置为Hyper键
+                 [:!QWERescape :!Tcaps_lock]                        ;; Capslock + Esc = 切换大小写
+                 [:!QWERspacebar :!Tspacebar]]}                     ;; Capslock + SpaceBar = 切换输入法
 
 
-         {:des "文本删除"
-          :rules [[:!QWERw :delete_or_backspace]                             ;; Capslock + W = 向左删除
-                  [:!QWERr :delete_forward]                                  ;; Capslock + R = 向右删除
-                  [:!QWERCw :!Odelete_or_backspace]                          ;; Capslock + Command + W = 向左删除一个单词
-                  [:!QWERCr :!Odelete_forward]                               ;; Capslock + Command + R = 向右删除一个单词
-                  [:!QWERopen_bracket [:!Shome :delete_or_backspace]]        ;; Capslock + [ = 删除至行首
-                  [:!QWERslash [:!Send :delete_or_backspace]]                ;; Capslock + / = 删除至行尾
-                  [:!QWERdelete_or_backspace :!Cdelete_or_backspace]         ;; Capslock + Delete = 删除当前行
-                  [:!QWERCdelete_or_backspace [:!Ca :delete_or_backspace]]]} ;; Capslock + Command + Delete = 删除全部内容
+        {:des "光标移动"
+         :rules [[:!QWERe :up_arrow]                            ;; Capslock + E = 向上移动
+                 [:!QWERd :down_arrow]                          ;; Capslock + D = 向下移动
+                 [:!QWERs :left_arrow]                          ;; Capslock + S = 向左移动
+                 [:!QWERf :right_arrow]                         ;; Capslock + F = 向右移动
+                 [:!QWERa :!Oleft_arrow]                        ;; Capslock + A = 向左移动一个单词
+                 [:!QWERg :!Oright_arrow]                       ;; Capslock + G = 向右移动一个单词
+                 [:!QWERp :!Cleft_arrow [:!terminals]]          ;; Capslock + P = 移动至行首
+                 [:!QWERsemicolon :!Cright_arrow [:!terminals]] ;; Capslock + ; = 移动至行尾
+                 [:!QWERp :!Ta [:terminals]]                    ;; Capslock + P = 移动至行首(terminal中)
+                 [:!QWERsemicolon :!Te [:terminals]]            ;; Capslock + ; = 移动至行尾(terminal中)
+                 [:!QWERCp :page_up]                            ;; Capslock + Command + P = 移动至页首 
+                 [:!QWERCsemicolon :page_down]]}                ;; Capslock + Command + ; = 移动至页尾
 
 
-         {:des "鼠标操作"
-          :rules [[{:pkey :button1 :modi [:right_command :right_control :right_option :right_shift]} :button5]     ;; Capslock + 鼠标左击 = 鼠标前进
-                  [{:pkey :button2 :modi [:right_command :right_control :right_option :right_shift]} :button4]]}]} ;; Capslock + 鼠标右击 = 鼠标后退
+        {:des "光标选中"
+         :rules [[:!QWERi :!Sup_arrow]                          ;; Capslock + I = 向上选中
+                 [:!QWERk :!Sdown_arrow]                        ;; Capslock + K = 向下选中
+                 [:!QWERj :!Sleft_arrow]                        ;; Capslock + J = 向左选中
+                 [:!QWERl :!Sright_arrow]                       ;; Capslock + L = 向右选中
+                 [:!QWERh :!OSleft_arrow]                       ;; Capslock + H = 向左选中一个单词
+                 [:!QWERn :!OSright_arrow]                      ;; Capslock + N = 向右选中一个单词
+                 [:!QWERy :!Oup_arrow]                          ;; Capslock + Y = 向外括选区域
+                 [:!QWERb :!Odown_arrow]                        ;; Capslock + B = 向内缩减区域 
+                 [:!QWERu :!SCleft_arrow]                       ;; Capslock + U = 选中至行首
+                 [:!QWERo :!SCright_arrow]                      ;; Capslock + O = 选中至行尾
+                 [:!QWERCu :!Spage_up]                          ;; Capslock + Command + U = 选中至页首
+                 [:!QWERCo :!Spage_down]                        ;; Capslock + Command + U = 选中至页首
+                 [:!QWERcomma [:!Oleft_arrow :!OSright_arrow]]  ;; Capslock + , = 选中当前单词
+                 [:!QWERCcomma [:!Cleft_arrow :!SCright_arrow]] ;; Capslock + Command + , = 选中当前行
+                 [:!QWERCi :!SOup_arrow]                        ;; Capslock + Command + I = 选中的行向上移动
+                 [:!QWERCk :!SOdown_arrow]]}                    ;; Capslock + Command + K = 选中的行向下移动
+
+
+        {:des "文本删除"
+         :rules [[:!QWERw :delete_or_backspace]                             ;; Capslock + W = 向左删除
+                 [:!QWERr :delete_forward]                                  ;; Capslock + R = 向右删除
+                 [:!QWERCw :!Odelete_or_backspace]                          ;; Capslock + Command + W = 向左删除一个单词
+                 [:!QWERCr :!Odelete_forward]                               ;; Capslock + Command + R = 向右删除一个单词
+                 [:!QWERopen_bracket [:!SCleft_arrow :delete_or_backspace]] ;; Capslock + [ = 删除至行首
+                 [:!QWERslash [:!SCright_arrow :delete_or_backspace]]       ;; Capslock + / = 删除至行尾
+                 [:!QWERdelete_or_backspace :!Cdelete_or_backspace]         ;; Capslock + Delete = 删除当前行
+                 [:!QWERCdelete_or_backspace [:!Ca :delete_or_backspace]]]} ;; Capslock + Command + Delete = 删除全部内容
+
+
+        {:des "鼠标操作"
+         :rules [[{:pkey :button1 :modi [:right_command :right_control :right_option :right_shift]} :button5]     ;; Capslock + 鼠标左击 = 鼠标前进
+                 [{:pkey :button2 :modi [:right_command :right_control :right_option :right_shift]} :button4]]}]} ;; Capslock + 鼠标右击 = 鼠标后退
