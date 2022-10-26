@@ -29,11 +29,11 @@
  ;the default value is 250
  :simlayer-threshold 500
 
- :applications {:terminals ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$"]
+ :applications {:terminals ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$", "^com\\.jetbrains\\.(.*)$"]
                 :textEditors ["^app\\.cyan\\.taio$", "^com\\.agiletortoise\\.Drafts-OSX$"]
                 :taio ["^app\\.cyan\\.taio$"]
                 :drafts ["^com\\.agiletortoise\\.Drafts-OSX$"]
-                :jetbrains ["^com\\.jetbrains\\.goland$"]
+                :jetbrains ["^com\\.jetbrains\\.(.*)$"]
                 :vscode ["^com\\.microsoft\\.VSCode$"]}
 
 

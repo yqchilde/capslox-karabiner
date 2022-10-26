@@ -230,7 +230,8 @@
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.jetbrains\\.(.*)$"
               ]
             }
           ],
@@ -261,7 +262,8 @@
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.jetbrains\\.(.*)$"
               ]
             }
           ],
@@ -292,7 +294,8 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.jetbrains\\.(.*)$"
               ]
             }
           ],
@@ -323,7 +326,8 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.jetbrains\\.(.*)$"
               ]
             }
           ],
@@ -715,7 +719,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^com\\.jetbrains\\.goland$"
+                "^com\\.jetbrains\\.(.*)$"
               ]
             }
           ],
@@ -748,7 +752,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^com\\.jetbrains\\.goland$"
+                "^com\\.jetbrains\\.(.*)$"
               ]
             }
           ],
@@ -780,7 +784,7 @@
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
-                "^com\\.jetbrains\\.goland$"
+                "^com\\.jetbrains\\.(.*)$"
               ]
             }
           ],
@@ -812,7 +816,7 @@
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
-                "^com\\.jetbrains\\.goland$"
+                "^com\\.jetbrains\\.(.*)$"
               ]
             }
           ],
