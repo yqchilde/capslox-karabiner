@@ -41,7 +41,7 @@
          :rules [;; Capslock键设置为Hyper键
                  [:##caps_lock :!QWEright_shift nil {:alone :escape}]
                  ;; Capslock + Esc = 切换大小写
-                 [:!QWERescape :!Tcaps_lock]
+                 [:!QWER#Pescape :caps_lock]
                  ;; Capslock + SpaceBar = 切换输入法
                  [:!QWERspacebar :!Tspacebar]]}
 

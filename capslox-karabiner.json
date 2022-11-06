@@ -1,6 +1,6 @@
 {
   "title": "capslox-karabiner",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "maintainers": [
     "yqchilde"
   ],
@@ -45,15 +45,15 @@
                 "right_control",
                 "right_option",
                 "right_shift"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "caps_lock",
-              "modifiers": [
-                "left_control"
-              ]
+              "key_code": "caps_lock"
             }
           ],
           "type": "basic"
