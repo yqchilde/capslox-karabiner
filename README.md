@@ -13,13 +13,13 @@
 3. 跳转至Karabiner-Elements并导入
 4. 在软件菜单项 `Complex modifications` 中点击左下角 `Add rule` 启用该项目全部功能
 
-![img](https://github.com/yqchilde/capslox-karabiner/blob/main/screenshots/img1.jpeg "效果图1")
+![img](https://github.com/yqchilde/capslox-karabiner/blob/main/screenshots/img1.jpg "效果图1")
 
 **注意：**
 
 如果要外接键盘，需要将command键位与option键位互换，如下：
 
-![img](https://github.com/yqchilde/capslox-karabiner/blob/main/screenshots/img2.jpeg "效果图2")
+![img](https://github.com/yqchilde/capslox-karabiner/blob/main/screenshots/img2.jpg "效果图2")
 
 ## 认识键盘符号
 
@@ -38,7 +38,7 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 
 ## 用法
 
-### Capslock赋能
+### Capslock赋能成Hyper
 
 将Capslock赋能为一个全新的功能修饰键 **✱ Hyper** ，类似于同时按下 `⇧` `⌃` `⌥` `⌘`
 
@@ -49,7 +49,7 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 | `⇪` + `escape` | `caps_lock` | 单击ESC切换大写锁定   |
 | `⇪` `spacebar` | `ctrl` + `spacebar` | 单击空格切换输入法    |
 
-### 光标移动
+### Hyper => 光标移动
 
 长按 **Capslock (✱ Hyper) 键** 配合进行操作
 
@@ -66,7 +66,7 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 | `⇪` `⌘` `P` | `fn` + `command` + `←` 或 `command` + `↑` | 移动至页首  |
 | `⇪` `⌘` `;` | `fn` + `command` + `→` 或 `command` + `↓` | 移动至页尾    |
 
-### 光标选中
+### Hyper => 光标选中
 
 | 按键 | 映射为                                                 | 说明       |
 | ---- |-----------------------------------------------------|----------|
@@ -87,7 +87,7 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 | `⇪` `⌘` `I` | `shift` + `option` + `↑`                            | 选中的行向上移动 |
 | `⇪` `⌘` `K` | `shift` + `option` + `↓`                            | 选中的行向下移动 |
 
-### 文本删除
+### Hyper => 文本删除
 
 | 按键          | 映射为                                     | 说明     |
 |-------------|-----------------------------------------| -------- |
@@ -100,12 +100,22 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 | `⇪` `⌫`     | `command` + `delete_or_backspace`       | 删除当前行 |
 | `⇪` `⌘` `⌫` | `command` + `A` && `delete_or_backspace` | 删除全部内容 |
 
-### 鼠标操作
+### Hyper => F1~F12
 
-| 按键         | 映射为       | 说明     |
-|------------|-----------| -------- |
-| `⇪` `鼠标左键` | `button5` | 鼠标前进 |
-| `⇪` `鼠标右键` | `button4` | 鼠标后退 |
+| 按键      | 映射为   | 说明    |
+|---------|-------|-------|
+| `⇪` `1` | `f1`  | f1按键  |
+| `⇪` `2` | `f2`  | f2按键  |
+| `⇪` `3` | `f3`  | f3按键  |
+| `⇪` `4` | `f4`  | f4按键  |
+| `⇪` `5` | `f5`  | f5按键  |
+| `⇪` `6` | `f6`  | f6按键  |
+| `⇪` `7` | `f7`  | f7按键  |
+| `⇪` `8` | `f8`  | f8按键  |
+| `⇪` `9` | `f9`  | f9按键  |
+| `⇪` `0` | `f10` | f10按键 |
+| `⇪` `-` | `f11` | f11按键 |
+| `⇪` `=` | `f12` | f12按键 |
 
 ## 参考项目
 
