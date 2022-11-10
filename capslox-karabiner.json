@@ -1,6 +1,6 @@
 {
   "title": "capslox-karabiner",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "maintainers": [
     "yqchilde"
   ],
@@ -8,61 +8,67 @@
   "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/yqchilde/capslox-karabiner/main/capslox-karabiner.json",
   "rules": [
     {
-      "description": "Auto generated layer conditions",
+      "description": "Capslock赋能Hyper",
       "manipulators": [
         {
-          "type": "basic",
-          "to": [
-            {
-              "set_variable": {
-                "name": "hyper-mode",
-                "value": 1
-              }
-            }
-          ],
-          "from": {
-            "key_code": "caps_lock"
-          },
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "hyper-mode",
-                "value": 0
-              }
-            }
-          ],
           "to_if_alone": [
             {
               "key_code": "escape"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Hyper => 大小写切换/输入法切换",
-      "manipulators": [
-        {
+          ],
           "from": {
-            "key_code": "escape"
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
           },
           "to": [
             {
-              "key_code": "caps_lock"
-            }
-          ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
+              "key_code": "right_shift",
+              "modifiers": [
+                "right_command",
+                "right_control",
+                "right_option"
+              ]
             }
           ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "spacebar"
+            "key_code": "escape",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -70,13 +76,6 @@
               "modifiers": [
                 "left_control"
               ]
-            }
-          ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
             }
           ],
           "type": "basic"
@@ -88,79 +87,91 @@
       "manipulators": [
         {
           "from": {
-            "key_code": "e"
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "up_arrow"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "d"
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "down_arrow"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "s"
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "left_arrow"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "f"
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "right_arrow"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "a"
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -170,18 +181,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "g"
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -191,18 +203,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "p"
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -213,11 +226,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
@@ -231,7 +239,15 @@
         },
         {
           "from": {
-            "key_code": "semicolon"
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -242,11 +258,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
@@ -260,7 +271,15 @@
         },
         {
           "from": {
-            "key_code": "p"
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -271,11 +290,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
@@ -289,7 +303,15 @@
         },
         {
           "from": {
-            "key_code": "semicolon"
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -300,11 +322,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
@@ -321,7 +338,11 @@
             "key_code": "p",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -335,11 +356,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
@@ -355,7 +371,11 @@
             "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -369,11 +389,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
@@ -389,7 +404,11 @@
             "key_code": "p",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -403,11 +422,6 @@
           ],
           "conditions": [
             {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
-            {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^app\\.cyan\\.taio$",
@@ -422,7 +436,11 @@
             "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -435,11 +453,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
@@ -457,7 +470,15 @@
       "manipulators": [
         {
           "from": {
-            "key_code": "i"
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -467,18 +488,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "k"
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -488,18 +510,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "j"
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -509,18 +532,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "l"
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -530,18 +554,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "h"
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -552,18 +577,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "n"
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -574,18 +600,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "y"
+            "key_code": "y",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -595,18 +622,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "b"
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -614,57 +642,6 @@
               "modifiers": [
                 "left_option"
               ]
-            }
-          ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "u"
-          },
-          "to": [
-            {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "o"
-          },
-          "to": [
-            {
-              "key_code": "right_arrow",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
             }
           ],
           "type": "basic"
@@ -674,7 +651,57 @@
             "key_code": "u",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_command",
+                "left_shift"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "o",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_command",
+                "left_shift"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "u",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -690,11 +717,6 @@
           ],
           "conditions": [
             {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
-            {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.jetbrains\\.(.*)$"
@@ -708,7 +730,11 @@
             "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -724,11 +750,6 @@
           ],
           "conditions": [
             {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
-            {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.jetbrains\\.(.*)$"
@@ -742,7 +763,11 @@
             "key_code": "u",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -757,11 +782,6 @@
           ],
           "conditions": [
             {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
-            {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
                 "^com\\.jetbrains\\.(.*)$"
@@ -775,7 +795,11 @@
             "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -790,43 +814,10 @@
           ],
           "conditions": [
             {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
-            {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
                 "^com\\.jetbrains\\.(.*)$"
               ]
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "comma"
-          },
-          "to": [
-            {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "right_arrow",
-              "modifiers": [
-                "left_option",
-                "left_shift"
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
             }
           ],
           "type": "basic"
@@ -836,7 +827,40 @@
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_option"
+              ]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_option",
+                "left_shift"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "comma",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -855,13 +879,6 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
@@ -869,7 +886,11 @@
             "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -883,11 +904,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
@@ -903,7 +919,11 @@
             "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -918,11 +938,6 @@
           ],
           "conditions": [
             {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
-            {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^app\\.cyan\\.taio$"
@@ -936,7 +951,11 @@
             "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -949,11 +968,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
@@ -968,7 +982,11 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -982,11 +1000,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
@@ -1002,7 +1015,11 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -1017,11 +1034,6 @@
           ],
           "conditions": [
             {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
-            {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^app\\.cyan\\.taio$"
@@ -1035,7 +1047,11 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -1049,14 +1065,41 @@
           ],
           "conditions": [
             {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
-            {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.agiletortoise\\.Drafts-OSX$"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f6",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.jetbrains\\.(.*)$",
+                "^com\\.microsoft\\.VSCode$"
               ]
             }
           ],
@@ -1069,36 +1112,38 @@
       "manipulators": [
         {
           "from": {
-            "key_code": "w"
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "delete_or_backspace"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "r"
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "delete_forward"
-            }
-          ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
             }
           ],
           "type": "basic"
@@ -1108,7 +1153,11 @@
             "key_code": "w",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -1120,13 +1169,6 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
@@ -1134,7 +1176,11 @@
             "key_code": "r",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -1146,18 +1192,19 @@
               ]
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "open_bracket"
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -1171,18 +1218,19 @@
               "key_code": "delete_or_backspace"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "slash"
+            "key_code": "slash",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -1196,18 +1244,19 @@
               "key_code": "delete_or_backspace"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "delete_or_backspace"
+            "key_code": "delete_or_backspace",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -1218,11 +1267,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
@@ -1235,7 +1279,15 @@
         },
         {
           "from": {
-            "key_code": "delete_or_backspace"
+            "key_code": "delete_or_backspace",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
@@ -1256,11 +1308,6 @@
             }
           ],
           "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            },
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
@@ -1276,7 +1323,11 @@
             "key_code": "delete_or_backspace",
             "modifiers": {
               "mandatory": [
-                "left_command"
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
               ]
             }
           },
@@ -1291,13 +1342,6 @@
               "key_code": "delete_or_backspace"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         }
       ]
@@ -1307,216 +1351,228 @@
       "manipulators": [
         {
           "from": {
-            "key_code": "1"
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f1"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "2"
+            "key_code": "2",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f2"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "3"
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f3"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "4"
+            "key_code": "4",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f4"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "5"
+            "key_code": "5",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f5"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "6"
+            "key_code": "6",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f6"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "7"
+            "key_code": "7",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f7"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "8"
+            "key_code": "8",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f8"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "9"
+            "key_code": "9",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f9"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "0"
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f10"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "hyphen"
+            "key_code": "hyphen",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f11"
             }
           ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
-            }
-          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "equal_sign"
+            "key_code": "equal_sign",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_option",
+                "right_shift"
+              ]
+            }
           },
           "to": [
             {
               "key_code": "f12"
-            }
-          ],
-          "conditions": [
-            {
-              "name": "hyper-mode",
-              "value": 1,
-              "type": "variable_if"
             }
           ],
           "type": "basic"

@@ -26,150 +26,148 @@
 
 
  ;the default value is 250
- :simlayer-threshold 500
-
- :layers {:hyper-mode {:key :caps_lock :alone {:key :escape}}}
+ :simlayer-threshold 500 
 
  :applications {:terminals ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$", "^com\\.jetbrains\\.(.*)$"]
                 :textEditors ["^app\\.cyan\\.taio$", "^com\\.agiletortoise\\.Drafts-OSX$"]
                 :taio ["^app\\.cyan\\.taio$"]
                 :drafts ["^com\\.agiletortoise\\.Drafts-OSX$"]
                 :jetbrains ["^com\\.jetbrains\\.(.*)$"]
-                :vscode ["^com\\.microsoft\\.VSCode$"]}
+                :vscode ["^com\\.microsoft\\.VSCode$"]
+                :ide ["^com\\.jetbrains\\.(.*)$", "^com\\.microsoft\\.VSCode$"]}
 
- :main [{:des "Hyper => 大小写切换/输入法切换"
-         :rules [:hyper-mode
+ :main [{:des "Capslock赋能Hyper"
+         :rules [;; Capslock键设置为Hyper键
+                 [:##caps_lock :!QWEright_shift nil {:alone :escape}]
                  ;; Hyper + Esc = 切换大小写
-                 [:escape :caps_lock]
+                 [:!QWER#Pescape :caps_lock]
                  ;; Hyper + SpaceBar = 切换输入法
-                 [:spacebar :!Tspacebar]]}
+                 [:!QWERspacebar :!Tspacebar]]}
 
 
         {:des   "Hyper => 光标移动"
-         :rules [:hyper-mode
-                 ;; Hyper + E = 向上移动
-                 [:e :up_arrow]
+         :rules [;; Hyper + E = 向上移动
+                 [:!QWERe :up_arrow]
                  ;; Hyper + D = 向下移动
-                 [:d :down_arrow]
+                 [:!QWERd :down_arrow]
                  ;; Hyper + S = 向左移动
-                 [:s :left_arrow]
+                 [:!QWERs :left_arrow]
                  ;; Hyper + F = 向右移动
-                 [:f :right_arrow]
+                 [:!QWERf :right_arrow]
                  ;; Hyper + A = 向左移动一个单词
-                 [:a :!Oleft_arrow]
+                 [:!QWERa :!Oleft_arrow]
                  ;; Hyper + G = 向右移动一个单词
-                 [:g :!Oright_arrow]
+                 [:!QWERg :!Oright_arrow]
                  ;; Hyper + P = 移动至行首
-                 [:p :!Cleft_arrow [:!terminals]]
+                 [:!QWERp :!Cleft_arrow [:!terminals]]
                  ;; Hyper + ; = 移动至行尾
-                 [:semicolon :!Cright_arrow [:!terminals]]
+                 [:!QWERsemicolon :!Cright_arrow [:!terminals]]
                  ;; Hyper + P = 移动至行首(terminal中)
-                 [:p :!Ta [:terminals]]
+                 [:!QWERp :!Ta [:terminals]]
                  ;; Hyper + ; = 移动至行尾(terminal中)
-                 [:semicolon :!Te [:terminals]]
+                 [:!QWERsemicolon :!Te [:terminals]]
                  ;; Hyper + Command + P = 移动至页首
-                 [:!Cp :!FCleft_arrow [:!textEditors]]
+                 [:!QWERCp :!FCleft_arrow [:!textEditors]]
                  ;; Hyper + Command + ; = 移动至页尾
-                 [:!Csemicolon :!FCright_arrow [:!textEditors]]
+                 [:!QWERCsemicolon :!FCright_arrow [:!textEditors]]
                  ;; Hyper + Command + P = 移动至页首(textEditor中)
-                 [:!Cp :!Cup_arrow [:textEditors]]
+                 [:!QWERCp :!Cup_arrow [:textEditors]]
                  ;; Hyper + Command + ; = 移动至页尾(textEditor中)
-                 [:!Csemicolon :!Cdown_arrow [:textEditors]]]}
+                 [:!QWERCsemicolon :!Cdown_arrow [:textEditors]]]}
 
 
         {:des   "Hyper => 光标选中"
-         :rules [:hyper-mode
-                 ;; Hyper + I = 向上选中
-                 [:i :!Sup_arrow]
+         :rules [;; Hyper + I = 向上选中
+                 [:!QWERi :!Sup_arrow]
                  ;; Hyper + K = 向下选中
-                 [:k :!Sdown_arrow]
+                 [:!QWERk :!Sdown_arrow]
                  ;; Hyper + J = 向左选中
-                 [:j :!Sleft_arrow]
+                 [:!QWERj :!Sleft_arrow]
                  ;; Hyper + L = 向右选中
-                 [:l :!Sright_arrow]
+                 [:!QWERl :!Sright_arrow]
                  ;; Hyper + H = 向左选中一个单词
-                 [:h :!OSleft_arrow]
+                 [:!QWERh :!OSleft_arrow]
                  ;; Hyper + N = 向右选中一个单词
-                 [:n :!OSright_arrow]
+                 [:!QWERn :!OSright_arrow]
                  ;; Hyper + Y = 向外括选区域
-                 [:y :!Oup_arrow]
+                 [:!QWERy :!Oup_arrow]
                  ;; Hyper + B = 向内缩减区域
-                 [:b :!Odown_arrow]
+                 [:!QWERb :!Odown_arrow]
                  ;; Hyper + U = 选中至行首
-                 [:u :!SCleft_arrow]
+                 [:!QWERu :!SCleft_arrow]
                  ;; Hyper + O = 选中至行尾
-                 [:o :!SCright_arrow]
+                 [:!QWERo :!SCright_arrow]
                  ;; Hyper + Command + U = 选中至页首
-                 [:!Cu :!SFCleft_arrow [:jetbrains]]
+                 [:!QWERCu :!SFCleft_arrow [:jetbrains]]
                  ;; Hyper + Command + O = 选中至页首
-                 [:!Co :!SFCright_arrow [:jetbrains]]
+                 [:!QWERCo :!SFCright_arrow [:jetbrains]]
                  ;; Hyper + Command + U = 选中至页首
-                 [:!Cu :!SCup_arrow [:!jetbrains]]
+                 [:!QWERCu :!SCup_arrow [:!jetbrains]]
                  ;; Hyper + Command + O = 选中至页首
-                 [:!Co :!SCdown_arrow [:!jetbrains]]
+                 [:!QWERCo :!SCdown_arrow [:!jetbrains]]
                  ;; Hyper + , = 选中当前单词
-                 [:comma [:!Oleft_arrow :!OSright_arrow]]
+                 [:!QWERcomma [:!Oleft_arrow :!OSright_arrow]]
                  ;; Hyper + Command + , = 选中当前行
-                 [:!Ccomma [:!Cleft_arrow :!SCright_arrow]]
+                 [:!QWERCcomma [:!Cleft_arrow :!SCright_arrow]]
                  ;; Hyper + Command + I = 选中的行向上移动
-                 [:!Ci :!SOup_arrow [:!textEditors]]
+                 [:!QWERCi :!SOup_arrow [:!textEditors]]
                  ;; Hyper + Command + I = 选中的行向上移动(taio中)
-                 [:!Ci :!COup_arrow [:taio]]
+                 [:!QWERCi :!COup_arrow [:taio]]
                  ;; Hyper + Command + I = 选中的行向上移动(drafts中)
-                 [:!Ci :!Oup_arrow [:drafts]]
+                 [:!QWERCi :!Oup_arrow [:drafts]]
                  ;; Hyper + Command + K = 选中的行向下移动
-                 [:!Ck :!SOdown_arrow [:!textEditors]]
+                 [:!QWERCk :!SOdown_arrow [:!textEditors]]
                  ;; Hyper + Command + K = 选中的行向下移动(taio中)
-                 [:!Ck :!COdown_arrow [:taio]]
+                 [:!QWERCk :!COdown_arrow [:taio]]
                  ;; Hyper + Command + K = 选中的行向下移动(drafts中)
-                 [:!Ck :!Odown_arrow [:drafts]]]}
+                 [:!QWERCk :!Odown_arrow [:drafts]]
+                 ;; Hyper + Option + r = 重命名选中变量名/函数名(jetbrains中)
+                 [:!QWEROr :!Sf6 [:ide]]]}
 
 
         {:des   "Hyper => 文本删除"
-         :rules [:hyper-mode
-                 ;; Hyper + W = 向左删除
-                 [:w :delete_or_backspace]
+         :rules [;; Hyper + W = 向左删除
+                 [:!QWERw :delete_or_backspace]
                  ;; Hyper + R = 向右删除
-                 [:r :delete_forward]
+                 [:!QWERr :delete_forward]
                  ;; Hyper + Command + W = 向左删除一个单词
-                 [:!Cw :!Odelete_or_backspace]
+                 [:!QWERCw :!Odelete_or_backspace]
                  ;; Hyper + Command + R = 向右删除一个单词
-                 [:!Cr :!Odelete_forward]
+                 [:!QWERCr :!Odelete_forward]
                  ;; Hyper + [ = 删除至行首
-                 [:open_bracket [:!SCleft_arrow :delete_or_backspace]]
+                 [:!QWERopen_bracket [:!SCleft_arrow :delete_or_backspace]]
                  ;; Hyper + / = 删除至行尾
-                 [:slash [:!SCright_arrow :delete_or_backspace]]
+                 [:!QWERslash [:!SCright_arrow :delete_or_backspace]]
                  ;; Hyper + Delete = 删除当前行
-                 [:delete_or_backspace :!Cdelete_or_backspace [:!textEditors]]
+                 [:!QWERdelete_or_backspace :!Cdelete_or_backspace [:!textEditors]]
                  ;; Hyper + Delete = 删除当前行
-                 [:delete_or_backspace [:!Cright_arrow :!SCleft_arrow :delete_or_backspace] [:textEditors]]
+                 [:!QWERdelete_or_backspace [:!Cright_arrow :!SCleft_arrow :delete_or_backspace] [:textEditors]]
                  ;; Hyper + Command + Delete = 删除全部内容
-                 [:!Cdelete_or_backspace [:!Ca :delete_or_backspace]]]}
+                 [:!QWERCdelete_or_backspace [:!Ca :delete_or_backspace]]]}
 
 
         {:des   "Hyper => F1~F12"
-         :rules [:hyper-mode
-                 ;; Hyper + 1 = F1
-                 [:1 :f1]
+         :rules [;; Hyper + 1 = F1
+                 [:!QWER1 :f1]
                  ;; Hyper + 2 = F2
-                 [:2 :f2]
+                 [:!QWER2 :f2]
                  ;; Hyper + 3 = F3
-                 [:3 :f3]
+                 [:!QWER3 :f3]
                  ;; Hyper + 4 = F4
-                 [:4 :f4]
+                 [:!QWER4 :f4]
                  ;; Hyper + 5 = F5
-                 [:5 :f5]
+                 [:!QWER5 :f5]
                  ;; Hyper + 6 = F6
-                 [:6 :f6]
+                 [:!QWER6 :f6]
                  ;; Hyper + 7 = F7
-                 [:7 :f7]
+                 [:!QWER7 :f7]
                  ;; Hyper + 8 = F8
-                 [:8 :f8]
+                 [:!QWER8 :f8]
                  ;; Hyper + 9 = F9
-                 [:9 :f9]
+                 [:!QWER9 :f9]
                  ;; Hyper + 0 = F10
-                 [:0 :f10]
+                 [:!QWER0 :f10]
                  ;; Hyper + - = F11
-                 [:hyphen :f11]
+                 [:!QWERhyphen :f11]
                  ;; Hyper + = = F12
-                 [:equal_sign :f12]]}]}
+                 [:!QWERequal_sign :f12]]}]}
