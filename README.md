@@ -3,21 +3,24 @@
 本项目是基于karabiner实现替代[capslox软件](https://capslox.com)
 部分功能的配置，由于在内测阶段一直使用capslox，且仅使用了基础热键，故没有参与付费购买，当然capslox不得不说是一款在Mac上非常好用的软件。
 
+当前规则版本为 **1.1.0**，已按 Karabiner-Elements **16.1.0** 的配置规范完成校验。Karabiner-Elements 16.1.0 支持 macOS 13 及更高版本。
+
 ## 安装
 
-1. 下载 [Karabiner-Elements](https://karabiner-elements.pqrs.org/) 并安装好
-2. 在默认浏览中输入下面网址，并回车
+1. 下载并安装 [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
+2. 打开 Karabiner-Elements 的 `Setup` 页面，按照提示授予后台活动、输入监控和辅助功能权限。Karabiner-Elements 16.x 的 `Karabiner-Core-Service` 需要辅助功能权限
+3. 在默认浏览器中输入下面网址，并回车
     ```shell
     karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/yqchilde/capslox-karabiner/main/capslox-karabiner.json
     ```
-3. 跳转至Karabiner-Elements并导入
-4. 在软件菜单项 `Complex modifications` 中点击左下角 `Add rule` 启用该项目全部功能
+4. 跳转至 Karabiner-Elements 并确认导入
+5. 进入 `Complex Modifications`，点击 `Add predefined rule`，分别启用本项目的 5 组规则
 
 ![img](https://github.com/yqchilde/capslox-karabiner/blob/main/screenshots/img1.jpg "效果图1")
 
 **注意：**
 
-如果要外接键盘，需要将command键位与option键位互换，如下：
+如果外接的是 Windows 键位布局键盘，并且 Command/Option 的物理位置不符合使用习惯，可以按下图交换键位；标准 Mac 键盘通常不需要调整：
 
 ![img](https://github.com/yqchilde/capslox-karabiner/blob/main/screenshots/img2.jpg "效果图2")
 
@@ -63,8 +66,10 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 | `⇪` `G`     | `option` + `→`                           | 向右移动一个单词 |
 | `⇪` `P`     | `command` + `←` 或 `ctrl` + `A`           | 移动至行首    |
 | `⇪` `;`     | `command` + `→` 或 `ctrl` + `E`           | 移动至行尾   |
-| `⇪` `⌘` `P` | `fn` + `command` + `←` 或 `command` + `↑` | 移动至页首  |
-| `⇪` `⌘` `;` | `fn` + `command` + `→` 或 `command` + `↓` | 移动至页尾    |
+| `⇪` `⌘` `P` | `command` + `home` 或 `command` + `↑` | 移动至页首  |
+| `⇪` `⌘` `;` | `command` + `end` 或 `command` + `↓` | 移动至页尾    |
+
+在 Terminal.app、iTerm2、JetBrains IDE 和 CLI-Manager 中，行首/行尾分别发送 `control + A`、`control + E`，以适配终端内的 zsh/readline 快捷键。
 
 ### Hyper => 光标选中
 
@@ -80,12 +85,15 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 | `⇪` `B`     | `option` + `下`                                      | 向内缩减区域   |
 | `⇪` `U`  | `shift` + `command` + `←`                           | 选中至行首    |
 | `⇪` `O`  | `shift` + `command` + `→`                           | 选中至行尾    |
-| `⇪` `⌘` `U` | `shift` + `fn` + `command` + `←` 或 `shift` + `command` + `↑` | 选中至页首    |
-| `⇪` `⌘` `O` | `shift` + `fn` + `command` + `→` 或 `shift` + `command` + `↓` | 选中至页尾    |
+| `⇪` `⌘` `U` | `shift` + `command` + `home` 或 `shift` + `command` + `↑` | 选中至页首    |
+| `⇪` `⌘` `O` | `shift` + `command` + `end` 或 `shift` + `command` + `↓` | 选中至页尾    |
 | `⇪` `,` | `option` + `←` && `shift` + `option` + `→`          | 选中当前单词   |
 | `⇪` `⌘` `,` | `command` + `←` && `shift` + `command` + `→`        | 选中当前行 |
 | `⇪` `⌘` `I` | `shift` + `option` + `↑`                            | 选中的行向上移动 |
 | `⇪` `⌘` `K` | `shift` + `option` + `↓`                            | 选中的行向下移动 |
+| `⇪` `⌥` `R` | `shift` + `F6`                                      | 重命名选中变量名/函数名 |
+
+VS Code 中的重命名映射依赖 [JetBrains Keymap](https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings) 扩展；JetBrains IDE 可直接使用。
 
 ### Hyper => 文本删除
 
@@ -116,6 +124,28 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 | `⇪` `0` | `f10` | f10按键 |
 | `⇪` `-` | `f11` | f11按键 |
 | `⇪` `=` | `f12` | f12按键 |
+
+## 开发与校验
+
+`capslox-karabiner.edn` 是规则源码，`capslox-karabiner.json` 是供用户导入的发布文件。开发环境需要：
+
+- [GokuRakuJoudo](https://github.com/yqrashawn/GokuRakuJoudo) 0.8.x
+- `jq`
+- Karabiner-Elements 自带的 `karabiner_cli`（用于官方规则校验）
+
+修改 EDN 后重新生成发布 JSON：
+
+```shell
+make build
+```
+
+检查 EDN/JSON 是否同步，并使用官方 CLI 校验：
+
+```shell
+make check
+```
+
+建议发布前通过 Karabiner-EventViewer 验证 Caps Lock 单击、Hyper 组合键、页首/页尾、输入法切换和 F1–F12。
 
 ## 参考项目
 

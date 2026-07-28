@@ -1,6 +1,6 @@
 {
   "title": "capslox-karabiner",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "maintainers": [
     "yqchilde"
   ],
@@ -16,6 +16,9 @@
               "key_code": "escape"
             }
           ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 200
+          },
           "from": {
             "key_code": "caps_lock",
             "modifiers": {
@@ -26,12 +29,13 @@
           },
           "to": [
             {
-              "key_code": "right_shift",
               "modifiers": [
                 "right_command",
                 "right_control",
                 "right_option"
-              ]
+              ],
+              "key_code": "right_shift",
+              "lazy": true
             }
           ],
           "type": "basic"
@@ -231,7 +235,8 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
-                "^com\\.jetbrains\\.(.*)$"
+                "^com\\.jetbrains\\.(.*)$",
+                "^com\\.cli-manager\\.app$"
               ]
             }
           ],
@@ -263,7 +268,8 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
-                "^com\\.jetbrains\\.(.*)$"
+                "^com\\.jetbrains\\.(.*)$",
+                "^com\\.cli-manager\\.app$"
               ]
             }
           ],
@@ -295,7 +301,8 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
-                "^com\\.jetbrains\\.(.*)$"
+                "^com\\.jetbrains\\.(.*)$",
+                "^com\\.cli-manager\\.app$"
               ]
             }
           ],
@@ -327,7 +334,8 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
-                "^com\\.jetbrains\\.(.*)$"
+                "^com\\.jetbrains\\.(.*)$",
+                "^com\\.cli-manager\\.app$"
               ]
             }
           ],
@@ -348,10 +356,9 @@
           },
           "to": [
             {
-              "key_code": "left_arrow",
+              "key_code": "home",
               "modifiers": [
-                "left_command",
-                "fn"
+                "left_command"
               ]
             }
           ],
@@ -381,10 +388,9 @@
           },
           "to": [
             {
-              "key_code": "right_arrow",
+              "key_code": "end",
               "modifiers": [
-                "left_command",
-                "fn"
+                "left_command"
               ]
             }
           ],
@@ -707,11 +713,10 @@
           },
           "to": [
             {
-              "key_code": "left_arrow",
+              "key_code": "home",
               "modifiers": [
                 "left_command",
-                "left_shift",
-                "fn"
+                "left_shift"
               ]
             }
           ],
@@ -740,11 +745,10 @@
           },
           "to": [
             {
-              "key_code": "right_arrow",
+              "key_code": "end",
               "modifiers": [
                 "left_command",
-                "left_shift",
-                "fn"
+                "left_shift"
               ]
             }
           ],

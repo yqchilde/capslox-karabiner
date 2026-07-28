@@ -14,21 +14,9 @@
     ;; !! | mandatory command + control + optional + shift (hyper)
     ;; ## | optional any
 
- :profiles {:Default {:default true
-                      :sim     50     ;; simultaneous_threshold_milliseconds (def: 50)
-                        ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
-                      :delay   50     ;; to_delayed_action_delay_milliseconds (def: 500)
-                        ;; after :delay ms, the key press is considered to be delayed (used for double-press macros)
-                      :alone   50     ;; to_if_alone_timeout_milliseconds (def: 1000)
-                        ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
-                      :held    50}}   ;; to_if_held_down_threshold_milliseconds (def: 500)
-                        ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
+ :profiles {:Default {:default true}}
 
-
- ;the default value is 250
- :simlayer-threshold 500 
-
- :applications {:terminals ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$", "^com\\.jetbrains\\.(.*)$"]
+ :applications {:terminals ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$", "^com\\.jetbrains\\.(.*)$", "^com\\.cli-manager\\.app$"]
                 :textEditors ["^app\\.cyan\\.taio$", "^com\\.agiletortoise\\.Drafts-OSX$"]
                 :taio ["^app\\.cyan\\.taio$"]
                 :drafts ["^com\\.agiletortoise\\.Drafts-OSX$"]
@@ -38,7 +26,13 @@
 
  :main [{:des "Capslock赋能Hyper"
          :rules [;; Capslock键设置为Hyper键
-                 [:##caps_lock :!QWEright_shift nil {:alone :escape}]
+                 [:##caps_lock
+                  {:key :right_shift
+                   :modi [:right_command :right_control :right_option]
+                   :lazy true}
+                  nil
+                  {:alone :escape
+                   :params {:alone 200}}]
                  ;; Hyper + Esc = 切换大小写
                  [:!QWER#Pescape :caps_lock]
                  ;; Hyper + SpaceBar = 切换输入法
@@ -67,9 +61,9 @@
                  ;; Hyper + ; = 移动至行尾(terminal中)
                  [:!QWERsemicolon :!Te [:terminals]]
                  ;; Hyper + Command + P = 移动至页首
-                 [:!QWERCp :!FCleft_arrow [:!textEditors]]
+                 [:!QWERCp :!Chome [:!textEditors]]
                  ;; Hyper + Command + ; = 移动至页尾
-                 [:!QWERCsemicolon :!FCright_arrow [:!textEditors]]
+                 [:!QWERCsemicolon :!Cend [:!textEditors]]
                  ;; Hyper + Command + P = 移动至页首(textEditor中)
                  [:!QWERCp :!Cup_arrow [:textEditors]]
                  ;; Hyper + Command + ; = 移动至页尾(textEditor中)
@@ -98,9 +92,9 @@
                  ;; Hyper + O = 选中至行尾
                  [:!QWERo :!SCright_arrow]
                  ;; Hyper + Command + U = 选中至页首
-                 [:!QWERCu :!SFCleft_arrow [:jetbrains]]
+                 [:!QWERCu :!SChome [:jetbrains]]
                  ;; Hyper + Command + O = 选中至页首
-                 [:!QWERCo :!SFCright_arrow [:jetbrains]]
+                 [:!QWERCo :!SCend [:jetbrains]]
                  ;; Hyper + Command + U = 选中至页首
                  [:!QWERCu :!SCup_arrow [:!jetbrains]]
                  ;; Hyper + Command + O = 选中至页首
@@ -121,7 +115,7 @@
                  [:!QWERCk :!COdown_arrow [:taio]]
                  ;; Hyper + Command + K = 选中的行向下移动(drafts中)
                  [:!QWERCk :!Odown_arrow [:drafts]]
-                 ;; Hyper + Option + r = 重命名选中变量名/函数名(jetbrains中)
+                 ;; Hyper + Option + r = 重命名选中变量名/函数名（VS Code 需安装 JetBrains Keymap）
                  [:!QWEROr :!Sf6 [:ide]]]}
 
 
